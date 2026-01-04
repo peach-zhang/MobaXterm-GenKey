@@ -1,357 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MobaXterm Keygen</title>
-    <link href="https://fonts.googleapis.cnpmjs.org/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      html, body {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 16px;
-        padding: 20px;
-      }
-      
-      .form-wrapper {
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        border-radius: 28px;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5);
-        overflow: hidden;
-        width: 100%;
-        max-width: 600px;
-        animation: slideUp 0.6s ease-out;
-      }
-      
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      form {
-        padding: 50px 40px;
-      }
-      
-      h1 {
-        text-align: center;
-        font-size: 32px;
-        font-weight: 600;
-        color: #2d3748;
-        margin-bottom: 12px;
-        background: linear-gradient(135deg, #3b82f6, #06b6d4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      .subtitle {
-        text-align: center;
-        color: #718096;
-        font-size: 16px;
-        margin-bottom: 40px;
-        line-height: 1.5;
-      }
-      
-      .form-group {
-        margin-bottom: 28px;
-      }
-      
-      label {
-        display: block;
-        font-weight: 500;
-        color: #4a5568;
-        margin-bottom: 8px;
-        font-size: 14px;
-      }
-      
-      input[type="text"], input[type="number"] {
-        width: 100%;
-        padding: 18px 20px;
-        border: 2px solid #e2e8f0;
-        border-radius: 16px;
-        font-size: 16px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        background: #f8fafc;
-        color: #1e293b;
-      }
-      
-      input[type="text"]:focus, input[type="number"]:focus {
-        outline: none;
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
-        transform: translateY(-2px);
-      }
-      
-      input[type="text"]::placeholder, input[type="number"]::placeholder {
-        color: #a0aec0;
-      }
-      
-      button {
-        width: 100%;
-        padding: 18px;
-        background: linear-gradient(135deg, #3b82f6, #06b6d4);
-        color: white;
-        border: none;
-        border-radius: 16px;
-        font-size: 17px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        margin: 12px 0 32px 0;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(59, 130, 246, 0.45);
-      }
-      
-      button:active {
-        transform: translateY(0);
-      }
-      
-      .divider {
-        height: 1px;
-        background: linear-gradient(to right, transparent, #e2e8f0, transparent);
-        margin: 24px 0;
-      }
-      
-      .github {
-        text-align: center;
-        padding: 16px 0 0 0;
-      }
-      
-      .github a {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-        color: #4a5568;
-        font-size: 14px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        padding: 8px 16px;
-        border-radius: 8px;
-      }
-      
-      .github a:hover {
-        color: #667eea;
-        background: rgba(102, 126, 234, 0.1);
-      }
-      
-      .github img {
-        width: 16px;
-        height: 16px;
-        opacity: 0.7;
-        transition: opacity 0.3s ease;
-      }
-      
-      .github a:hover img {
-        opacity: 1;
-      }
-      
-      /* 语言切换按钮 */
-      .language-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        display: flex;
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(20px);
-        border-radius: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-      }
-      
-      .lang-btn {
-        padding: 10px 20px;
-        border: none;
-        background: transparent;
-        color: rgb(29, 1, 1);
-        border-radius: 25px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 600;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        min-width: 70px;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      }
-      
-      .lang-btn.active {
-        background: rgba(255, 255, 255, 0.95);
-        color: #3b82f6;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transform: translateY(-1px);
-      }
-      
-      .lang-btn:hover:not(.active) {
-        background: rgba(255, 255, 255, 0.15);
-      }
-      
-      /* 响应式设计 */
-      @media (max-width: 480px) {
-        html, body {
-          padding: 16px;
-        }
-        
-        .form-wrapper {
-          border-radius: 20px;
-        }
-        
-        form {
-          padding: 40px 30px;
-        }
-        
-        h1 {
-          font-size: 28px;
-        }
-        
-        input[type="text"], input[type="number"] {
-          padding: 16px 18px;
-        }
-        
-        button {
-          padding: 16px;
-        }
-        
-        .language-toggle {
-          top: 16px;
-          right: 16px;
-          padding: 6px;
-        }
-        
-        .lang-btn {
-          padding: 8px 16px;
-          font-size: 12px;
-          min-width: 60px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 语言切换按钮 -->
-    <div class="language-toggle">
-      <button class="lang-btn active" onclick="switchLanguage('zh')" data-lang="zh">中文</button>
-      <button class="lang-btn" onclick="switchLanguage('en')" data-lang="en">EN</button>
-    </div>
 
-    <div class="form-wrapper">
-      <form action="./gen" method="get">
+        html, body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        .form-wrapper {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 28px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        form {
+            padding: 50px 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 16px;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+
+        input[type="text"]::placeholder, input[type="number"]::placeholder {
+            color: #a0aec0;
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 12px 0 32px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.45);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+            margin: 24px 0;
+        }
+
+        .github {
+            text-align: center;
+            padding: 16px 0 0 0;
+        }
+
+        .github a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .github a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .github img {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .github a:hover img {
+            opacity: 1;
+        }
+
+        /* 语言切换按钮 */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            color: rgb(29, 1, 1);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 70px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            margin-right: 12px;
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.95);
+            color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            html, body {
+                padding: 16px;
+            }
+
+            .form-wrapper {
+                border-radius: 20px;
+            }
+
+            form {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            input[type="text"], input[type="number"] {
+                padding: 16px 18px;
+            }
+
+            button {
+                padding: 16px;
+            }
+
+            .language-toggle {
+                top: 16px;
+                right: 16px;
+                padding: 6px;
+            }
+
+            .lang-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 语言切换按钮 -->
+<div class="language-toggle">
+    <button class="lang-btn active" onclick="switchLanguage('zh')" data-lang="zh">中文</button>
+    <button class="lang-btn" onclick="switchLanguage('en')" data-lang="en">EN</button>
+</div>
+
+<div class="form-wrapper">
+    <form action="./gen" method="get">
         <h1 data-i18n="title">MobaXterm 密钥生成器</h1>
         <p class="subtitle" data-i18n="subtitle">生成您的 MobaXterm 许可证密钥</p>
-        
-        <div class="form-group">
-          <label for="name" data-i18n="nameLabel">姓名</label>
-          <input type="text" id="name" name="name" data-i18n-placeholder="namePlaceholder" placeholder="请输入您的姓名" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="ver" data-i18n="versionLabel">版本</label>
-          <input type="text" id="ver" name="ver" data-i18n-placeholder="versionPlaceholder" placeholder="请输入版本号 (例如: 25.2)" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="count" data-i18n="countLabel">用户数</label>
-          <input type="number" id="count" name="count" data-i18n-placeholder="countPlaceholder" placeholder="请输入用户数量" value="1" min="1" max="999" required>
-        </div>
-        
-        <button type="submit" data-i18n="generateBtn">生成密钥</button>
-        
-      </form>
-    </div>
 
-    <script>
-      // 多语言文本配置
-      const translations = {
+        <div class="form-group">
+            <label for="name" data-i18n="nameLabel">姓名</label>
+            <input type="text" id="name" name="name" data-i18n-placeholder="namePlaceholder"
+                   placeholder="请输入您的姓名" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ver" data-i18n="versionLabel">版本</label>
+            <input type="text" id="ver" name="ver" data-i18n-placeholder="versionPlaceholder"
+                   placeholder="请输入版本号 (例如: 25.2)" required>
+        </div>
+
+        <div class="form-group">
+            <label for="count" data-i18n="countLabel">用户数</label>
+            <input type="number" id="count" name="count" data-i18n-placeholder="countPlaceholder"
+                   placeholder="请输入用户数量" value="1" min="1" max="999" required>
+        </div>
+
+        <button type="submit" data-i18n="generateBtn">生成密钥</button>
+
+    </form>
+</div>
+
+<script>
+    // 多语言文本配置
+    const translations = {
         zh: {
-          title: 'MobaXterm 密钥生成器',
-          subtitle: '生成您的 MobaXterm 许可证密钥',
-          nameLabel: '姓名',
-          namePlaceholder: '请输入您的姓名',
-          versionLabel: '版本',
-          versionPlaceholder: '请输入版本号 (例如: 25.2)',
-          countLabel: '用户数',
-          countPlaceholder: '请输入用户数量',
-          generateBtn: '生成密钥',
-          githubLink: '在 GitHub 上查看'
+            title: 'MobaXterm 密钥生成器',
+            subtitle: '生成您的 MobaXterm 许可证密钥',
+            nameLabel: '姓名',
+            namePlaceholder: '请输入您的姓名',
+            versionLabel: '版本',
+            versionPlaceholder: '请输入版本号 (例如: 25.2)',
+            countLabel: '用户数',
+            countPlaceholder: '请输入用户数量',
+            generateBtn: '生成密钥',
+            githubLink: '在 GitHub 上查看'
         },
         en: {
-          title: 'MobaXterm Keygen',
-          subtitle: 'Generate your MobaXterm license key',
-          nameLabel: 'Name',
-          namePlaceholder: 'Enter your name',
-          versionLabel: 'Version',
-          versionPlaceholder: 'Enter version (e.g., 25.2)',
-          countLabel: 'User Count',
-          countPlaceholder: 'Enter user count',
-          generateBtn: 'Generate Key',
-          githubLink: 'View on GitHub'
+            title: 'MobaXterm Keygen',
+            subtitle: 'Generate your MobaXterm license key',
+            nameLabel: 'Name',
+            namePlaceholder: 'Enter your name',
+            versionLabel: 'Version',
+            versionPlaceholder: 'Enter version (e.g., 25.2)',
+            countLabel: 'User Count',
+            countPlaceholder: 'Enter user count',
+            generateBtn: 'Generate Key',
+            githubLink: 'View on GitHub'
         }
-      };
+    };
 
-      // 当前语言
-      let currentLang = 'zh';
+    // 当前语言
+    let currentLang = 'zh';
 
-      // 语言切换函数
-      function switchLanguage(lang) {
+    // 语言切换函数
+    function switchLanguage(lang) {
         currentLang = lang;
-        
+
         // 更新按钮状态
         document.querySelectorAll('.lang-btn').forEach(btn => {
-          btn.classList.remove('active');
-          if (btn.dataset.lang === lang) {
-            btn.classList.add('active');
-          }
+            btn.classList.remove('active');
+            if (btn.dataset.lang === lang) {
+                btn.classList.add('active');
+            }
         });
-        
+
         // 更新文本内容
         document.querySelectorAll('[data-i18n]').forEach(element => {
-          const key = element.dataset.i18n;
-          if (translations[lang][key]) {
-            element.textContent = translations[lang][key];
-          }
+            const key = element.dataset.i18n;
+            if (translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
         });
-        
+
         // 更新占位符
         document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-          const key = element.dataset.i18nPlaceholder;
-          if (translations[lang][key]) {
-            element.placeholder = translations[lang][key];
-          }
+            const key = element.dataset.i18nPlaceholder;
+            if (translations[lang][key]) {
+                element.placeholder = translations[lang][key];
+            }
         });
-        
+
         // 保存语言偏好
         localStorage.setItem('preferred-language', lang);
-      }
+    }
 
-      // 页面加载时恢复语言偏好
-      document.addEventListener('DOMContentLoaded', function() {
+    // 页面加载时恢复语言偏好
+    document.addEventListener('DOMContentLoaded', function () {
         const savedLang = localStorage.getItem('preferred-language') || 'zh';
         switchLanguage(savedLang);
-      });
-    </script>
-  </body>
+    });
+</script>
+</body>
 </html>
 
