@@ -19,15 +19,14 @@
         justify-content: center;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-size: 16px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 20px;
       }
       
       .form-wrapper {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 24px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-radius: 28px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5);
         overflow: hidden;
         width: 100%;
         max-width: 600px;
@@ -55,7 +54,7 @@
         font-weight: 600;
         color: #2d3748;
         margin-bottom: 12px;
-        background: linear-gradient(135deg, #667eea, #764ba2);
+        background: linear-gradient(135deg, #3b82f6, #06b6d4);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -85,17 +84,17 @@
         width: 100%;
         padding: 18px 20px;
         border: 2px solid #e2e8f0;
-        border-radius: 14px;
+        border-radius: 16px;
         font-size: 16px;
-        transition: all 0.3s ease;
-        background: #fff;
-        color: #2d3748;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #f8fafc;
+        color: #1e293b;
       }
       
       input[type="text"]:focus, input[type="number"]:focus {
         outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
         transform: translateY(-2px);
       }
       
@@ -106,22 +105,24 @@
       button {
         width: 100%;
         padding: 18px;
-        background: linear-gradient(135deg, #667eea, #764ba2);
+        background: linear-gradient(135deg, #3b82f6, #06b6d4);
         color: white;
         border: none;
-        border-radius: 14px;
+        border-radius: 16px;
         font-size: 17px;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         margin: 12px 0 32px 0;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
       }
       
       button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(59, 130, 246, 0.45);
       }
       
       button:active {
@@ -174,38 +175,39 @@
         top: 20px;
         right: 20px;
         display: flex;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border-radius: 25px;
-        padding: 6px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(20px);
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
       }
       
       .lang-btn {
-        padding: 8px 16px;
+        padding: 10px 20px;
         border: none;
         background: transparent;
-        color: white;
-        border-radius: 20px;
+        color: rgb(29, 1, 1);
+        border-radius: 25px;
         cursor: pointer;
         font-size: 14px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        min-width: 60px;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        min-width: 70px;
         white-space: nowrap;
         display: flex;
         align-items: center;
         justify-content: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       }
       
       .lang-btn.active {
-        background: rgba(255, 255, 255, 0.9);
-        color: #4a5568;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.95);
+        color: #3b82f6;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-1px);
       }
       
       .lang-btn:hover:not(.active) {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.15);
       }
       
       /* 响应式设计 */
@@ -215,7 +217,7 @@
         }
         
         .form-wrapper {
-          border-radius: 16px;
+          border-radius: 20px;
         }
         
         form {
@@ -237,13 +239,13 @@
         .language-toggle {
           top: 16px;
           right: 16px;
-          padding: 4px;
+          padding: 6px;
         }
         
         .lang-btn {
-          padding: 6px 12px;
+          padding: 8px 16px;
           font-size: 12px;
-          min-width: 50px;
+          min-width: 60px;
         }
       }
     </style>
@@ -277,14 +279,6 @@
         
         <button type="submit" data-i18n="generateBtn">生成密钥</button>
         
-        <div class="divider"></div>
-        
-        <div class="github">
-          <a href="https://github.com/malaohu/MobaXterm-GenKey" target="_blank" rel="noopener noreferrer">
-            <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
-            <span data-i18n="githubLink">在 GitHub 上查看</span>
-          </a>
-        </div>
       </form>
     </div>
 
