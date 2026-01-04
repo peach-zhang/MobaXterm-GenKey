@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import os
-import sys
 import zipfile
 import io  # <--- 引入 io 模块，用于内存操作
 from flask import Flask, request, send_file, make_response
@@ -12,6 +10,7 @@ app = Flask(__name__)
 VariantBase64Table = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 VariantBase64Dict = {i: VariantBase64Table[i] for i in range(len(VariantBase64Table))}
 VariantBase64ReverseDict = {VariantBase64Table[i]: i for i in range(len(VariantBase64Table))}
+
 
 def VariantBase64Encode(bs: bytes):
     result = b''
@@ -39,6 +38,7 @@ def VariantBase64Encode(bs: bytes):
         result += block.encode()
         return result
 
+
 def EncryptBytes(key: int, bs: bytes):
     result = bytearray()
     for i in range(len(bs)):
@@ -46,10 +46,12 @@ def EncryptBytes(key: int, bs: bytes):
         key = result[-1] & key | 0x482D
     return bytes(result)
 
+
 class LicenseType:
     Professional = 1
     Educational = 3
     Persional = 4
+
 
 # --- 重构后的核心功能 ---
 def GenerateLicenseInMemory(Type: LicenseType, Count: int, UserName: str, MajorVersion: int, MinorVersion: int):
@@ -94,7 +96,7 @@ def generate_and_download_license():
     # 1. 获取和验证参数
     name = request.args.get('name')
     version = request.args.get('ver')
-    
+
     if not name or not version:
         return make_response("错误：必须提供 'name' 和 'ver' 参数 (例如: /gen?name=MyName&ver=25.2)", 400)
 
@@ -123,4 +125,3 @@ def generate_and_download_license():
 if __name__ == '__main__':
     # 建议开启 debug=True 进行开发调试，部署时设为 False
     app.run(host='0.0.0.0', port=5000, debug=True)
-
